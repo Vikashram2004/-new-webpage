@@ -1,0 +1,528 @@
+/* ===========================
+   ROOT VARIABLES & RESET
+   =========================== */
+:root {
+    --prussian-blue: #1e3a8a;
+    --prussian-blue-dark: #1e40af;
+    --prussian-blue-light: #3b82f6;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --medium-gray: #6c757d;
+    --dark-gray: #343a40;
+    --success-green: #28a745;
+    --warning-orange: #fd7e14;
+    --danger-red: #dc3545;
+    --sidebar-width: 50vw;
+    --navbar-height: 80px;
+    --mobile-navbar-height: 120px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   MAIN NAVBAR STYLES
+   =========================== */
+
+/* Main navbar container - sets Prussian blue background and positioning */
+.main-navbar {
+    background-color: var(--prussian-blue) !important;
+    box-shadow: 0 2px 10px rgba(30, 58, 138, 0.2);
+    z-index: 1030;
+    min-height: var(--navbar-height);
+    padding: 0.75rem 0;
+}
+
+/* Mobile specific navbar height adjustment */
+@media (max-width: 991.98px) {
+    .main-navbar {
+        min-height: var(--mobile-navbar-height);
+        padding: 0.5rem 0;
+    }
+}
+
+/* ===========================
+   LOGO AND COMPANY NAME STYLES
+   =========================== */
+
+/* Logo styling for consistent sizing and shape */
+.navbar-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid var(--white);
+    transition: transform 0.3s ease;
+}
+
+/* Logo hover effect for interactivity */
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Desktop logo sizing */
+@media (min-width: 992px) {
+    .navbar-logo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Company title styling with consistent color and typography */
+.company-title {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile company title adjustments */
+@media (max-width: 991.98px) {
+    .company-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* ===========================
+   DELIVERY SECTION STYLES
+   =========================== */
+
+/* Delivery section container for proper spacing and alignment */
+.delivery-section {
+    min-width: 200px;
+    max-width: 280px;
+}
+
+/* Mobile delivery section adjustments */
+@media (max-width: 991.98px) {
+    .delivery-section {
+        min-width: 120px;
+        max-width: 150px;
+    }
+}
+
+/* Delivery input label with location icon styling */
+.delivery-label {
+    background-color: var(--white);
+    border: 1px solid #dee2e6;
+    color: var(--prussian-blue);
+    font-weight: 600;
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Delivery input field styling */
+.delivery-input {
+    border: 1px solid #dee2e6;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Delivery input focus states for better UX */
+.delivery-input:focus {
+    border-color: var(--prussian-blue-light);
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+/* ===========================
+   SEARCH SECTION STYLES
+   =========================== */
+
+/* Search section container for flexible sizing */
+.search-section {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* Search input field styling with proper padding and transitions */
+.search-input {
+    border: 1px solid #dee2e6;
+    border-radius: 6px 0 0 6px;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Search input focus state */
+.search-input:focus {
+    border-color: var(--prussian-blue-light);
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+    outline: none;
+}
+
+/* Search button styling with Prussian blue theme */
+.search-btn {
+    background-color: var(--prussian-blue-light);
+    border: 1px solid var(--prussian-blue-light);
+    color: var(--white);
+    border-radius: 0 6px 6px 0;
+    padding: 0.75rem 1.25rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+/* Search button hover and focus effects */
+.search-btn:hover,
+.search-btn:focus {
+    background-color: var(--prussian-blue-dark);
+    border-color: var(--prussian-blue-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3);
+}
+
+/* ===========================
+   ACTION ICONS STYLES
+   =========================== */
+
+/* Icon button base styling for consistent appearance */
+.icon-button {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    min-width: 50px;
+}
+
+/* Icon button hover effects for better interactivity */
+.icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Icon button focus state for accessibility */
+.icon-button:focus {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
+/* Icon labels for desktop view */
+.icon-label {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Hide icon labels on mobile */
+@media (max-width: 991.98px) {
+    .icon-label {
+        display: none;
+    }
+}
+
+/* Cart badge styling for notification count */
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--danger-red);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: bold;
+    min-width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--white);
+}
+
+/* ===========================
+   HAMBURGER BUTTON STYLES
+   =========================== */
+
+/* Hamburger menu button styling */
+.hamburger-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hamburger button hover effect */
+.hamburger-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+/* Hamburger button focus state */
+.hamburger-btn:focus {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
+/* ===========================
+   SIDEBAR OVERLAY STYLES
+   =========================== */
+
+/* Sidebar overlay for background dimming when sidebar is open */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Sidebar overlay active state */
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===========================
+   SIDEBAR MENU STYLES
+   =========================== */
+
+/* Main sidebar container with sliding animation */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -50vw;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--white);
+    z-index: 1050;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+/* Sidebar active state - slides in from left */
+.sidebar-menu.active {
+    left: 0;
+}
+
+/* Sidebar header with logo and close button */
+.sidebar-header {
+    background-color: var(--prussian-blue);
+    color: var(--white);
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar logo styling */
+.sidebar-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    border: 2px solid var(--white);
+}
+
+/* Sidebar company name */
+.sidebar-company-name {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* Sidebar close button */
+.sidebar-close-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.25rem;
+    padding: 0.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Sidebar close button hover effect */
+.sidebar-close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===========================
+   SIDEBAR CONTENT STYLES
+   =========================== */
+
+/* Sidebar content container */
+.sidebar-content {
+    padding: 1.5rem 0;
+}
+
+/* Browse categories section header */
+.browse-section {
+    padding: 0 1.5rem 1rem 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 1rem;
+}
+
+/* Browse title styling */
+.browse-title {
+    color: var(--prussian-blue);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Categories list container */
+.categories-list {
+    padding: 0 1rem;
+}
+
+/* Individual category item styling */
+.category-item {
+    display: flex;
+    align-items: center;
+    padding: 0.875rem 0.75rem;
+    color: var(--dark-gray);
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Category item hover effect */
+.category-item:hover {
+    background-color: var(--light-gray);
+    color: var(--prussian-blue);
+    transform: translateX(5px);
+    text-decoration: none;
+}
+
+/* Category item active/focus state */
+.category-item:focus {
+    outline: 2px solid var(--prussian-blue);
+    outline-offset: 2px;
+}
+
+/* ===========================
+   RESPONSIVE LAYOUT ADJUSTMENTS
+   =========================== */
+
+/* Mobile layout row spacing */
+.mobile-header-row-1 {
+    padding-bottom: 0.5rem;
+}
+
+.mobile-header-row-2 {
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Desktop layout spacing */
+.desktop-header {
+    gap: 1rem;
+}
+
+/* Mobile responsive adjustments for smaller screens */
+@media (max-width: 575.98px) {
+    :root {
+        --sidebar-width: 80vw;
+    }
+    
+    .delivery-section {
+        min-width: 100px;
+        max-width: 120px;
+    }
+    
+    .icon-button {
+        font-size: 1.1rem;
+        padding: 0.375rem;
+        min-width: 40px;
+    }
+    
+    .company-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Large desktop adjustments */
+@media (min-width: 1400px) {
+    .delivery-section {
+        min-width: 250px;
+        max-width: 320px;
+    }
+    
+    .search-section {
+        max-width: 800px;
+    }
+}
+
+/* ===========================
+   UTILITY CLASSES
+   =========================== */
+
+/* Main content padding to account for fixed navbar */
+.main-content {
+    padding-top: 2rem;
+}
+
+/* Smooth scrolling for better UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+    outline: 2px solid var(--prussian-blue-light);
+    outline-offset: 2px;
+}
+
+/* ===========================
+   ANIMATION CLASSES
+   =========================== */
+
+/* Fade in animation for sidebar content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sidebar-menu.active .category-item {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.sidebar-menu.active .category-item:nth-child(1) { animation-delay: 0.1s; }
+.sidebar-menu.active .category-item:nth-child(2) { animation-delay: 0.15s; }
+.sidebar-menu.active .category-item:nth-child(3) { animation-delay: 0.2s; }
+.sidebar-menu.active .category-item:nth-child(4) { animation-delay: 0.25s; }
+.sidebar-menu.active .category-item:nth-child(5) { animation-delay: 0.3s; }
+.sidebar-menu.active .category-item:nth-child(6) { animation-delay: 0.35s; }
+.sidebar-menu.active .category-item:nth-child(7) { animation-delay: 0.4s; }
+.sidebar-menu.active .category-item:nth-child(8) { animation-delay: 0.45s; }

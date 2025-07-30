@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CogMart - E-commerce Navigation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Navigation Header -->
+    <nav class="main-navbar navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid px-3">
+            
+            <!-- Mobile Layout - Row 1: Logo, Company Name, Action Icons -->
+            <div class="mobile-header-row-1 d-flex d-lg-none align-items-center justify-content-between w-100 mb-2">
+                <!-- Logo Section -->
+                <div class="logo-section d-flex align-items-center">
+                    <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=CM" alt="CogMart Logo" class="navbar-logo me-2">
+                </div>
+                
+                <!-- Company Name - Center -->
+                <div class="company-name-mobile flex-grow-1 text-center">
+                    <h5 class="company-title m-0">CogMart</h5>
+                </div>
+                
+                <!-- Action Icons - Right -->
+                <div class="action-icons-mobile d-flex align-items-center">
+                    <button class="icon-button me-2" title="Wishlist">
+                        <i class="bi bi-heart"></i>
+                    </button>
+                    <button class="icon-button me-2" title="Cart">
+                        <i class="bi bi-cart"></i>
+                        <span class="cart-badge">3</span>
+                    </button>
+                    <button class="icon-button" title="Sign In">
+                        <i class="bi bi-person"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Layout - Row 2: Hamburger, Delivery, Search -->
+            <div class="mobile-header-row-2 d-flex d-lg-none align-items-center w-100">
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger-btn me-3" id="sidebarToggle" title="Menu">
+                    <i class="bi bi-list"></i>
+                </button>
+                
+                <!-- Delivery Input -->
+                <div class="delivery-section me-3 flex-shrink-0">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text delivery-label">
+                            <i class="bi bi-geo-alt"></i>
+                        </span>
+                        <input type="text" class="form-control delivery-input" placeholder="Enter location">
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="search-section flex-grow-1">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control search-input" placeholder="Search products...">
+                        <button class="btn search-btn" type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Layout -->
+            <div class="desktop-header d-none d-lg-flex align-items-center w-100">
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger-btn me-4" id="sidebarToggleDesktop" title="Menu">
+                    <i class="bi bi-list"></i>
+                </button>
+                
+                <!-- Logo and Company Name -->
+                <div class="logo-company-section d-flex align-items-center me-4">
+                    <img src="https://via.placeholder.com/50x50/1e40af/ffffff?text=CM" alt="CogMart Logo" class="navbar-logo me-3">
+                    <h4 class="company-title m-0">CogMart</h4>
+                </div>
+                
+                <!-- Delivery Input -->
+                <div class="delivery-section me-4">
+                    <div class="input-group">
+                        <span class="input-group-text delivery-label">
+                            <i class="bi bi-geo-alt"></i>
+                        </span>
+                        <input type="text" class="form-control delivery-input" placeholder="Enter delivery location">
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="search-section flex-grow-1 me-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control search-input" placeholder="Search for products, brands and more...">
+                        <button class="btn search-btn" type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Action Icons -->
+                <div class="action-icons d-flex align-items-center">
+                    <button class="icon-button me-3" title="Wishlist">
+                        <i class="bi bi-heart"></i>
+                        <span class="icon-label">Wishlist</span>
+                    </button>
+                    <button class="icon-button me-3" title="Cart">
+                        <i class="bi bi-cart"></i>
+                        <span class="cart-badge">3</span>
+                        <span class="icon-label">Cart</span>
+                    </button>
+                    <button class="icon-button" title="Sign In">
+                        <i class="bi bi-person"></i>
+                        <span class="icon-label">Sign In</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu" id="sidebarMenu">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+            <div class="d-flex align-items-center">
+                <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=CM" alt="CogMart Logo" class="sidebar-logo me-3">
+                <h5 class="sidebar-company-name m-0">CogMart</h5>
+            </div>
+            <button class="sidebar-close-btn" id="sidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        
+        <!-- Browse Categories Section -->
+        <div class="sidebar-content">
+            <div class="browse-section">
+                <h6 class="browse-title">
+                    <i class="bi bi-grid-3x3-gap me-2"></i>
+                    Browse Categories
+                </h6>
+            </div>
+            
+            <!-- Categories List -->
+            <div class="categories-list">
+                <a href="#" class="category-item">
+                    <i class="bi bi-phone me-3"></i>
+                    Electronics
+                </a>
+                <a href="#" class="category-item">
+                    <i class="bi bi-shirt me-3"></i>
+                    Fashion
+                </a>
+                <a href="#" class="category-item">
+                    <i class="bi bi-house me-3"></i>
+                    Home & Garden
+                </a>
+                <a href="#" class="category-item">
+                    <i class="bi bi-heart-pulse me-3"></i>
+                    Health & Beauty
+                </a>
+                <a href="#" class="category-item">
+                    <i class="bi bi-controller me-3"></i>
+                    Sports & Outdoors
+                </a>
+                <a href="#" class="category-item">
+                    <i class="bi bi-book me-3"></i>
+                    Books & Media
+                </a>
+                <a href="#" class="category-item">
+                    <i class="bi bi-car-front me-3"></i>
+                    Automotive
+                </a>
+                <a href="#" class="category-item">
+                    <i class="bi bi-gift me-3"></i>
+                    Gifts & Occasions
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content Area (for demonstration) -->
+    <main class="main-content">
+        <div class="container mt-5">
+            <h1>Welcome to CogMart</h1>
+            <p>This is the main content area. The navigation header above is fully responsive and functional.</p>
+            <div style="height: 100vh;"></div>
+        </div>
+    </main>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom TypeScript (compiled to JS) -->
+    <script src="app.js"></script>
+</body>
+</html>
